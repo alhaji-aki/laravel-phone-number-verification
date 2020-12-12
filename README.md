@@ -5,3 +5,5 @@
 5. override the phoneNumberAttribute() and phoneNumberVerificationAttribute() methods in the model
 6. also override sendPhoneNumberVerificationNotification() methods in the model
 7. register middleware
+
+TODO: add tests
