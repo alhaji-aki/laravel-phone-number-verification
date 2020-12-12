@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Validation\ValidationException;
 
-class PhoneNumberNumberVerificationController extends Controller
+class PhoneNumberVerificationController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -73,7 +73,7 @@ class PhoneNumberNumberVerificationController extends Controller
     {
         abort_if($request->user()->hasVerifiedPhoneNumber(), Response::HTTP_FORBIDDEN, 'Already verified');
 
-        $response = $request->user()->sendPhoneNumberVerificationNotification();
+        $response = $request->user()->generatePhoneNumberVerificationToken();
 
         return response()->json([
             'message' => trans($response)
