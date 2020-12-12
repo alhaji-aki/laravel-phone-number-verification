@@ -30,7 +30,7 @@
         },
         "laravel": {
             "providers": [
-                "AlhajiAki\\PhoneNumberVerification\\PhoneNumberServiceProvider"
+                "AlhajiAki\\PhoneNumberVerification\\PhoneNumberVerificationServiceProvider"
             ]
         }
     },
