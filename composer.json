@@ -1,5 +1,5 @@
 {
-    "name": "alhaji-aki/laravel-mobile-verification",
+    "name": "alhaji-aki/laravel-phone-number-verification",
     "description": "A package to help verify phone numbers using otp tokens",
     "type": "library",
     "license": "MIT",
