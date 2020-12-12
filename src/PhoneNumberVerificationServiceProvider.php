@@ -32,4 +32,16 @@ class PhoneNumberVerificationServiceProvider extends ServiceProvider implements 
             Console\InstallCommand::class,
         ]);
     }
+
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return [
+            Console\InstallCommand::class
+        ];
+    }
 }
