@@ -115,6 +115,25 @@ class User extends Authenticatable implements CanSendOtpTokenContract, MustVerif
 }
 ```
 
+If you want users to be notified when they register on your application add `SendPhoneNumberVerificationNotification` listener to listeners of the `Registered` event in the `EventServiceProvider`. Like this:
+
+```php
+/**
+ * The event listener mappings for the application.
+ *
+ * @var array
+ */
+protected $listen = [
+    ...
+    Registered::class => [
+        SendPhoneNumberVerificationNotification::class,
+    ],
+    ...
+];
+```
+
+Dont forget to import the full namespace `use \AlhajiAki\PhoneNumberVerification\Listeners\SendPhoneNumberVerificationNotification;`
+
 Finally, you will have to register the `\AlhajiAki\PhoneNumberVerification\Middleware\EnsurePhoneNumberIsVerified::class` middleware in your Http Kernel. Example:
 
 ```php
