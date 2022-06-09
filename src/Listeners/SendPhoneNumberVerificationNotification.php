@@ -15,7 +15,7 @@ class SendPhoneNumberVerificationNotification
      */
     public function handle(Registered $event)
     {
-        if ($event->user instanceof MustVerifyPhoneNumber && !$event->user->hasVerifiedPhoneNumber()) {
+        if ($event->user instanceof MustVerifyPhoneNumber && ! $event->user->hasVerifiedPhoneNumber()) {
             $event->user->generatePhoneNumberVerificationToken();
         }
     }

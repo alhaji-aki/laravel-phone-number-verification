@@ -146,6 +146,12 @@ protected $routeMiddleware = [
 
 Then you can protect your routes with that middleware.
 
+## Testing
+
+```bash
+composer test
+```
+
 ## Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
