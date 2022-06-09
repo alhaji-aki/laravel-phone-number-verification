@@ -2,10 +2,8 @@
 
 namespace AlhajiAki\PhoneNumberVerification\Tests\Models;
 
-use AlhajiAki\LaravelUuid\HasUuid;
 use AlhajiAki\PhoneNumberVerification\Contracts\MustVerifyPhoneNumber as ContractsMustVerifyPhoneNumber;
 use AlhajiAki\PhoneNumberVerification\Traits\MustVerifyPhoneNumber;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class ImplementedMustVerifyPhoneNumberModel extends Authenticatable implements ContractsMustVerifyPhoneNumber

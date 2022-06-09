@@ -6,8 +6,6 @@ use AlhajiAki\PhoneNumberVerification\Middleware\EnsurePhoneNumberIsVerified;
 use AlhajiAki\PhoneNumberVerification\Tests\Models\ImplementedMustVerifyPhoneNumberModel;
 use AlhajiAki\PhoneNumberVerification\Tests\Models\NotImplementedMustVerifyPhoneNumberModel;
 use AlhajiAki\PhoneNumberVerification\Tests\TestCase;
-use App\Models\Brand;
-use App\Models\Merchant;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Route;
 

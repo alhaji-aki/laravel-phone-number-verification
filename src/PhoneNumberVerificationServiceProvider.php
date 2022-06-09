@@ -24,7 +24,7 @@ class PhoneNumberVerificationServiceProvider extends ServiceProvider implements 
      */
     public function boot()
     {
-        if (!$this->app->runningInConsole()) {
+        if (! $this->app->runningInConsole()) {
             return;
         }
 
@@ -41,7 +41,7 @@ class PhoneNumberVerificationServiceProvider extends ServiceProvider implements 
     public function provides()
     {
         return [
-            Console\InstallCommand::class
+            Console\InstallCommand::class,
         ];
     }
 }

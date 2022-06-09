@@ -6,7 +6,6 @@ use AlhajiAki\PhoneNumberVerification\Contracts\MustVerifyPhoneNumber;
 use AlhajiAki\PhoneNumberVerification\Listeners\SendPhoneNumberVerificationNotification;
 use AlhajiAki\PhoneNumberVerification\Tests\Models\NotImplementedMustVerifyPhoneNumberModel;
 use Illuminate\Auth\Events\Registered;
-use Illuminate\Foundation\Auth\User;
 use PHPUnit\Framework\TestCase;
 
 class SendPhoneNumberVerificationNotificationTest extends TestCase
@@ -20,7 +19,7 @@ class SendPhoneNumberVerificationNotificationTest extends TestCase
         $user->method('hasVerifiedPhoneNumber')->willReturn(false);
         $user->expects($this->once())->method('generatePhoneNumberVerificationToken');
 
-        $listener = new SendPhoneNumberVerificationNotification;
+        $listener = new SendPhoneNumberVerificationNotification();
 
         $listener->handle(new Registered($user));
     }
@@ -33,7 +32,7 @@ class SendPhoneNumberVerificationNotificationTest extends TestCase
         $user = $this->getMockBuilder(NotImplementedMustVerifyPhoneNumberModel::class)->getMock();
         $user->expects($this->never())->method('generatePhoneNumberVerificationToken');
 
-        $listener = new SendPhoneNumberVerificationNotification;
+        $listener = new SendPhoneNumberVerificationNotification();
 
         $listener->handle(new Registered($user));
     }
@@ -47,7 +46,7 @@ class SendPhoneNumberVerificationNotificationTest extends TestCase
         $user->method('hasVerifiedPhoneNumber')->willReturn(true);
         $user->expects($this->never())->method('generatePhoneNumberVerificationToken');
 
-        $listener = new SendPhoneNumberVerificationNotification;
+        $listener = new SendPhoneNumberVerificationNotification();
 
         $listener->handle(new Registered($user));
     }

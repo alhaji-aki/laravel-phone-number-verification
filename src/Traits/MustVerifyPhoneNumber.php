@@ -13,7 +13,7 @@ trait MustVerifyPhoneNumber
      */
     public function hasVerifiedPhoneNumber()
     {
-        return !is_null($this->{$this->phoneNumberVerificationAttribute()});
+        return ! is_null($this->{$this->phoneNumberVerificationAttribute()});
     }
 
     /**
@@ -38,7 +38,7 @@ trait MustVerifyPhoneNumber
         return $this->broker()->sendOtpToken([
             $this->phoneNumberAttribute() => $this->getPhoneNumberForVerification(),
             'action' => $this->getPhoneNumberVerificationAction(),
-            'field' => $this->phoneNumberAttribute()
+            'field' => $this->phoneNumberAttribute(),
         ], function ($user, $token) {
             $user->sendPhoneNumberVerificationNotification($token);
         });
