@@ -13,7 +13,7 @@ trait MustVerifyPhoneNumber
      */
     public function hasVerifiedPhoneNumber()
     {
-        return ! is_null($this->{$this->phoneNumberVerificationAttribute()});
+        return !is_null($this->{$this->phoneNumberVerificationAttribute()});
     }
 
     /**
@@ -31,7 +31,7 @@ trait MustVerifyPhoneNumber
     /**
      * Generate the phone number verification token
      *
-     * @return void
+     * @return string
      */
     public function generatePhoneNumberVerificationToken()
     {
@@ -64,6 +64,11 @@ trait MustVerifyPhoneNumber
         return OtpToken::broker();
     }
 
+    /**
+     * Get the action that should be used for verification.
+     *
+     * @return string
+     */
     public function getPhoneNumberVerificationAction()
     {
         return 'account-verification';

@@ -29,7 +29,7 @@ interface MustVerifyPhoneNumber
     /**
      * Generate the mobile verification token
      *
-     * @return void
+     * @return string
      */
     public function generatePhoneNumberVerificationToken();
 
@@ -47,7 +47,17 @@ interface MustVerifyPhoneNumber
      */
     public function getPhoneNumberVerificationAction();
 
+    /**
+     * Get the phone number that should be used for verification.
+     *
+     * @return string
+     */
     public function phoneNumberAttribute();
 
+    /**
+     * Get the column that should be used to mark verification as completed.
+     *
+     * @return string
+     */
     public function phoneNumberVerificationAttribute();
 }
