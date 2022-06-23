@@ -13,7 +13,7 @@ trait MustVerifyPhoneNumber
      */
     public function hasVerifiedPhoneNumber()
     {
-        return !is_null($this->{$this->phoneNumberVerificationAttribute()});
+        return ! is_null($this->{$this->phoneNumberVerificationAttribute()});
     }
 
     /**
