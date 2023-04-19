@@ -2,6 +2,15 @@
 
 All notable changes to `laravel-phone-number-verification` will be documented in this file.
 
+## Added Laravel 10 Support - 2023-04-19
+
+### What's Changed
+
+- Updated PHP and Laravel versions by @alhaji-aki in https://github.com/alhaji-aki/laravel-phone-number-verification/pull/3
+- Added Typehints to classes and traits
+
+**Full Changelog**: https://github.com/alhaji-aki/laravel-phone-number-verification/compare/1.0.3...1.0.4
+
 ## Added More Github actions - 2023-04-19
 
 ### What's Changed
