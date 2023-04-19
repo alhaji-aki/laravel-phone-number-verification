@@ -6,58 +6,41 @@ interface MustVerifyPhoneNumber
 {
     /**
      * Determine if the user has verified their mobile.
-     *
-     * @return bool
      */
-    public function hasVerifiedPhoneNumber();
+    public function hasVerifiedPhoneNumber(): bool;
 
     /**
      * Mark the given user's mobile as verified.
-     *
-     * @return bool
      */
-    public function markPhoneNumberAsVerified();
+    public function markPhoneNumberAsVerified(): bool;
 
     /**
      * Send the mobile verification notification.
-     *
-     * @param string $token
-     * @return void
      */
-    public function sendPhoneNumberVerificationNotification($token);
+    public function sendPhoneNumberVerificationNotification(string $token): void;
 
     /**
      * Generate the mobile verification token
-     *
-     * @return string
      */
-    public function generatePhoneNumberVerificationToken();
+    public function generatePhoneNumberVerificationToken(): string;
 
     /**
      * Get the mobile that should be used for verification.
-     *
-     * @return string
      */
-    public function getPhoneNumberForVerification();
+    public function getPhoneNumberForVerification(): string;
 
     /**
      * Get the action to use when creating the token
-     *
-     * @return string
      */
-    public function getPhoneNumberVerificationAction();
+    public function getPhoneNumberVerificationAction(): string;
 
     /**
      * Get the phone number that should be used for verification.
-     *
-     * @return string
      */
-    public function phoneNumberAttribute();
+    public function phoneNumberAttribute(): string;
 
     /**
      * Get the column that should be used to mark verification as completed.
-     *
-     * @return string
      */
-    public function phoneNumberVerificationAttribute();
+    public function phoneNumberVerificationAttribute(): string;
 }

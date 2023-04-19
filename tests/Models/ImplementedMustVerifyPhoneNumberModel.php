@@ -16,17 +16,17 @@ class ImplementedMustVerifyPhoneNumberModel extends Authenticatable implements C
 
     public $timestamps = false;
 
-    public function phoneNumberAttribute()
+    public function phoneNumberAttribute(): string
     {
         return 'phone';
     }
 
-    public function phoneNumberVerificationAttribute()
+    public function phoneNumberVerificationAttribute(): string
     {
         return 'phone_verified_at';
     }
 
-    public function sendPhoneNumberVerificationNotification($token)
+    public function sendPhoneNumberVerificationNotification($token): void
     {
         return;
     }

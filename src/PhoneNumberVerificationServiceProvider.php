@@ -9,20 +9,16 @@ class PhoneNumberVerificationServiceProvider extends ServiceProvider implements 
 {
     /**
      * Register any application services.
-     *
-     * @return void
      */
-    public function register()
+    public function register(): void
     {
         //
     }
 
     /**
      * Bootstrap any application services.
-     *
-     * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         if (! $this->app->runningInConsole()) {
             return;
@@ -38,7 +34,7 @@ class PhoneNumberVerificationServiceProvider extends ServiceProvider implements 
      *
      * @return array<int, class-string>
      */
-    public function provides()
+    public function provides(): array
     {
         return [
             Console\InstallCommand::class,

@@ -2,26 +2,23 @@
 
 namespace AlhajiAki\PhoneNumberVerification\Traits;
 
+use AlhajiAki\OtpToken\Contracts\OtpTokenBroker;
 use AlhajiAki\OtpToken\OtpToken;
 
 trait MustVerifyPhoneNumber
 {
     /**
      * Determine if the user has verified their phone number.
-     *
-     * @return bool
      */
-    public function hasVerifiedPhoneNumber()
+    public function hasVerifiedPhoneNumber(): bool
     {
         return ! is_null($this->{$this->phoneNumberVerificationAttribute()});
     }
 
     /**
      * Mark the given user's phone number as verified.
-     *
-     * @return bool
      */
-    public function markPhoneNumberAsVerified()
+    public function markPhoneNumberAsVerified(): bool
     {
         return $this->forceFill([
             $this->phoneNumberVerificationAttribute() => $this->freshTimestamp(),
@@ -30,10 +27,8 @@ trait MustVerifyPhoneNumber
 
     /**
      * Generate the phone number verification token
-     *
-     * @return string
      */
-    public function generatePhoneNumberVerificationToken()
+    public function generatePhoneNumberVerificationToken(): string
     {
         return $this->broker()->sendOtpToken([
             $this->phoneNumberAttribute() => $this->getPhoneNumberForVerification(),
@@ -46,30 +41,24 @@ trait MustVerifyPhoneNumber
 
     /**
      * Get the phone number that should be used for verification.
-     *
-     * @return string
      */
-    public function getPhoneNumberForVerification()
+    public function getPhoneNumberForVerification(): string
     {
         return $this->{$this->phoneNumberAttribute()};
     }
 
     /**
      * Get the broker to be used during password reset.
-     *
-     * @return \AlhajiAkiOtpToken\Contracts\OtpTokenBroker
      */
-    public function broker()
+    public function broker(): OtpTokenBroker
     {
         return OtpToken::broker();
     }
 
     /**
      * Get the action that should be used for verification.
-     *
-     * @return string
      */
-    public function getPhoneNumberVerificationAction()
+    public function getPhoneNumberVerificationAction(): string
     {
         return 'account-verification';
     }
