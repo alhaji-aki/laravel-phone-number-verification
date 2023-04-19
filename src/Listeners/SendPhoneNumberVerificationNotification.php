@@ -10,7 +10,6 @@ class SendPhoneNumberVerificationNotification
     /**
      * Handle the event.
      *
-     * @param  object  $event
      * @return void
      */
     public function handle(Registered $event)
