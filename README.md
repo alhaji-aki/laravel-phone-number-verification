@@ -98,17 +98,17 @@ class User extends Authenticatable implements CanSendOtpTokenContract, MustVerif
 {
     use Notifiable, CanSendOtpToken, MustVerifyPhoneNumber;
 
-    public function phoneNumberAttribute()
+    public function phoneNumberAttribute(): string
     {
         return 'phone_number';
     }
 
-    public function phoneNumberVerificationAttribute()
+    public function phoneNumberVerificationAttribute(): string
     {
         return 'phone_number_verified_at';
     }
 
-    public function sendPhoneNumberVerificationNotification($token)
+    public function sendPhoneNumberVerificationNotification(string $token): void
     {
         $this->notify(new VerifyPhoneNumber($token));
     }
@@ -121,7 +121,7 @@ If you want users to be notified when they register on your application add `Sen
 /**
  * The event listener mappings for the application.
  *
- * @var array
+ * @var array<class-string, array<int, class-string>>
  */
 protected $listen = [
     ...
