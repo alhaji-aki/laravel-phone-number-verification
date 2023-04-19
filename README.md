@@ -75,9 +75,9 @@ class User extends Authenticatable implements CanSendOtpTokenContract, MustVerif
 
 For this to work properly, you will have to override three methods in your User model. There are:
 
--   `phoneNumberAttribute()`: This is the attribute that represents the phone number column in your database.
--   `phoneNumberVerificationAttribute()`: This is the timestamp attribute that will be updated to indicate that a user is verified.
--   `sendPhoneNumberVerificationNotification()`: This is where the notification will be sent. This receives the token to be sent.
+- `phoneNumberAttribute()`: This is the attribute that represents the phone number column in your database.
+- `phoneNumberVerificationAttribute()`: This is the timestamp attribute that will be updated to indicate that a user is verified.
+- `sendPhoneNumberVerificationNotification()`: This is where the notification will be sent. This receives the token to be sent.
 
 An example implementation is:
 
@@ -150,6 +150,18 @@ Then you can protect your routes with that middleware.
 
 ```bash
 composer test
+```
+
+## Formatting
+
+```bash
+composer format
+```
+
+## Static analysis
+
+```bash
+composer analyse
 ```
 
 ## Contributing
