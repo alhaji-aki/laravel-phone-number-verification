@@ -26,7 +26,7 @@ class ImplementedMustVerifyPhoneNumberModel extends Authenticatable implements C
         return 'phone_verified_at';
     }
 
-    public function sendPhoneNumberVerificationNotification($token): void
+    public function sendPhoneNumberVerificationNotification(string $token): void
     {
         return;
     }
