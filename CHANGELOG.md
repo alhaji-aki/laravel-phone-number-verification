@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-phone-number-verification` will be documented in this file.
 
+## Bug Fixes - 2023-04-23
+
+**Full Changelog**: https://github.com/alhaji-aki/laravel-phone-number-verification/compare/1.0.5...1.0.6
+
 ## Updated Readme - 2023-04-19
 
 ### What's Changed
