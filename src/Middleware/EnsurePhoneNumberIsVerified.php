@@ -16,9 +16,9 @@ class EnsurePhoneNumberIsVerified
     public function handle(Request $request, Closure $next): Response|JsonResponse
     {
         if (
-            !$request->user() ||
-            !$request->user() instanceof MustVerifyPhoneNumber ||
-            !$request->user()->hasVerifiedPhoneNumber()
+            ! $request->user() ||
+            ! $request->user() instanceof MustVerifyPhoneNumber ||
+            ! $request->user()->hasVerifiedPhoneNumber()
         ) {
             abort(Response::HTTP_FORBIDDEN, 'Your phone number is not verified.');
         }
