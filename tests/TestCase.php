@@ -33,10 +33,15 @@ abstract class TestCase extends Orchestra
 
     protected function setUpDatabase(Application $app)
     {
-        $app['db']->connection()->getSchemaBuilder()->create('not_implemented_must_verify_phone_number_models', function (Blueprint $table) {
+        $app['db']->connection()->getSchemaBuilder()->create('implemented_must_verify_phone_number_models', function (Blueprint $table) {
             $table->increments('id');
             $table->string('phone');
             $table->string('phone_verified_at')->nullable();
+        });
+
+        $app['db']->connection()->getSchemaBuilder()->create('not_implemented_must_verify_phone_number_models', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('phone');
         });
     }
 }
