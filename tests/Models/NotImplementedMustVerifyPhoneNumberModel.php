@@ -7,7 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class NotImplementedMustVerifyPhoneNumberModel extends Authenticatable
 {
-    use MustVerifyPhoneNumber;
+    // use MustVerifyPhoneNumber;
 
     protected $table = 'not_implemented_must_verify_phone_number_models';
 

@@ -10,7 +10,7 @@ class ImplementedMustVerifyPhoneNumberModel extends Authenticatable implements C
 {
     use MustVerifyPhoneNumber;
 
-    protected $table = 'not_implemented_must_verify_phone_number_models';
+    protected $table = 'implemented_must_verify_phone_number_models';
 
     protected $guarded = [];
 
@@ -28,6 +28,5 @@ class ImplementedMustVerifyPhoneNumberModel extends Authenticatable implements C
 
     public function sendPhoneNumberVerificationNotification(string $token): void
     {
-        return;
     }
 }

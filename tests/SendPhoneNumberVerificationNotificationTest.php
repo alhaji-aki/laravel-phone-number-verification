@@ -6,6 +6,7 @@ use AlhajiAki\PhoneNumberVerification\Contracts\MustVerifyPhoneNumber;
 use AlhajiAki\PhoneNumberVerification\Listeners\SendPhoneNumberVerificationNotification;
 use AlhajiAki\PhoneNumberVerification\Tests\Models\NotImplementedMustVerifyPhoneNumberModel;
 use Illuminate\Auth\Events\Registered;
+use Mockery as m;
 use PHPUnit\Framework\TestCase;
 
 class SendPhoneNumberVerificationNotificationTest extends TestCase
@@ -27,10 +28,10 @@ class SendPhoneNumberVerificationNotificationTest extends TestCase
     /**
      * @return void
      */
-    public function test_user_is_a_not_instance_of_must_verify_phone_number()
+    public function test_user_is_not_an_instance_of_must_verify_phone_number()
     {
-        $user = $this->getMockBuilder(NotImplementedMustVerifyPhoneNumberModel::class)->getMock();
-        $user->expects($this->never())->method('generatePhoneNumberVerificationToken');
+        $user = m::mock(NotImplementedMustVerifyPhoneNumberModel::class);
+        $user->shouldNotReceive('generatePhoneNumberVerificationToken');
 
         $listener = new SendPhoneNumberVerificationNotification();
 

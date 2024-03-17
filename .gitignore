@@ -6,4 +6,5 @@ composer.lock
 phpunit.xml
 .env
 .phpunit.result.cache
+.phpunit.cache
 .php_cs.cache
