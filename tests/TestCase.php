@@ -19,7 +19,7 @@ abstract class TestCase extends Orchestra
     }
 
     /**
-     * @param Application $app
+     * @param  Application  $app
      */
     protected function getEnvironmentSetUp($app)
     {
@@ -31,9 +31,6 @@ abstract class TestCase extends Orchestra
         ]);
     }
 
-    /**
-     * @param  $app
-     */
     protected function setUpDatabase(Application $app)
     {
         $app['db']->connection()->getSchemaBuilder()->create('not_implemented_must_verify_phone_number_models', function (Blueprint $table) {

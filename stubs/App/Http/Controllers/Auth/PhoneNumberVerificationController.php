@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
 use AlhajiAki\OtpToken\OtpToken;
+use App\Http\Controllers\Controller;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -31,7 +31,7 @@ class PhoneNumberVerificationController extends Controller
     {
 
         $validated = $request->validate([
-            'token' => 'required|string|size:6'
+            'token' => 'required|string|size:6',
         ]);
 
         abort_if($request->user()->hasVerifiedPhoneNumber(), Response::HTTP_FORBIDDEN, 'Already verified');
@@ -43,7 +43,7 @@ class PhoneNumberVerificationController extends Controller
             array_merge($validated, [
                 $request->user()->phoneNumberAttribute() => $request->user()->getPhoneNumberForVerification(),
                 'action' => $request->user()->getPhoneNumberVerificationAction(),
-                'field' => $request->user()->phoneNumberAttribute()
+                'field' => $request->user()->phoneNumberAttribute(),
             ]),
             function ($user) {
                 $this->markAsVerified($user);
@@ -52,21 +52,20 @@ class PhoneNumberVerificationController extends Controller
 
         if ($response !== OtpToken::ACTION_COMPLETED) {
             throw ValidationException::withMessages([
-                'token' => trans($response)
+                'token' => trans($response),
             ]);
         }
 
         // If the action was successful, we will return a success
         // response else an error response is sent.
         return response()->json([
-            'message' => trans($response)
+            'message' => trans($response),
         ], Response::HTTP_OK);
     }
 
     /**
      * Resend the phone number verification notification.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse
      */
     public function resend(Request $request)
@@ -76,7 +75,7 @@ class PhoneNumberVerificationController extends Controller
         $response = $request->user()->generatePhoneNumberVerificationToken();
 
         return response()->json([
-            'message' => trans($response)
+            'message' => trans($response),
         ], $response == OtpToken::OTP_TOKEN_SENT ? Response::HTTP_OK : Response::HTTP_UNAUTHORIZED);
     }
 
