@@ -2,6 +2,19 @@
 
 All notable changes to `laravel-phone-number-verification` will be documented in this file.
 
+## Laravel 11 Support - 2024-03-17
+
+### What's Changed
+
+* Laravel 11 upgrade by @alhaji-aki in https://github.com/alhaji-aki/laravel-phone-number-verification/pull/5
+* Bump dependabot/fetch-metadata from 1.3.6 to 1.6.0 by @dependabot in https://github.com/alhaji-aki/laravel-phone-number-verification/pull/6
+
+### New Contributors
+
+* @dependabot made their first contribution in https://github.com/alhaji-aki/laravel-phone-number-verification/pull/6
+
+**Full Changelog**: https://github.com/alhaji-aki/laravel-phone-number-verification/compare/1.0.6...1.1.0
+
 ## Bug Fixes - 2023-04-23
 
 **Full Changelog**: https://github.com/alhaji-aki/laravel-phone-number-verification/compare/1.0.5...1.0.6
