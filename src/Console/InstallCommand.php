@@ -27,8 +27,8 @@ class InstallCommand extends Command
     public function handle(): void
     {
         // Controllers...
-        (new Filesystem())->ensureDirectoryExists(app_path('Http/Controllers/Auth'));
-        (new Filesystem())->copyDirectory(__DIR__.'/../../stubs/App/Http/Controllers/Auth', app_path('Http/Controllers/Auth'));
+        (new Filesystem)->ensureDirectoryExists(app_path('Http/Controllers/Auth'));
+        (new Filesystem)->copyDirectory(__DIR__.'/../../stubs/App/Http/Controllers/Auth', app_path('Http/Controllers/Auth'));
 
         $this->info('Phone number verification scaffolding installed successfully.');
     }
