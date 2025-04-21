@@ -7,6 +7,9 @@ parameters:
     paths:
         - src
 
+    ignoreErrors:
+        -
+            identifier: trait.unused
+
     tmpDir: build/phpstan
 
-    checkMissingIterableValueType: true

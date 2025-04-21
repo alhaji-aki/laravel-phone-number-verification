@@ -30,19 +30,19 @@
         }
     },
     "require": {
-        "php": "^8.1|^8.2|^8.3",
-        "illuminate/contracts": "^10.0|^11.0",
-        "illuminate/database": "^10.0|^11.0",
-        "illuminate/support": "^10.0|^11.0",
+        "php": "^8.1|^8.2|^8.3|^8.4",
+        "illuminate/contracts": "^10.0|^11.0|^12.0",
+        "illuminate/database": "^10.0|^11.0|^12.0",
+        "illuminate/support": "^10.0|^11.0|^12.0",
         "alhaji-aki/laravel-otp-token": "^1.2"
     },
     "require-dev": {
         "ext-pdo_sqlite": "*",
-        "larastan/larastan": "^2.0",
+        "larastan/larastan": "^2.7.0|^3.0",
         "laravel/pint": "^1.13",
         "mockery/mockery": "^1.6",
-        "orchestra/testbench": "^8.0|^9.0",
-        "phpunit/phpunit": "^10.5"
+        "orchestra/testbench": "^8.0|^9.0|^10.0",
+        "phpunit/phpunit": "^10.5|^11.5"
     },
     "config": {
         "sort-packages": true
