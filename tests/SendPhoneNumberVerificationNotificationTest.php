@@ -20,7 +20,7 @@ class SendPhoneNumberVerificationNotificationTest extends TestCase
         $user->method('hasVerifiedPhoneNumber')->willReturn(false);
         $user->expects($this->once())->method('generatePhoneNumberVerificationToken');
 
-        $listener = new SendPhoneNumberVerificationNotification();
+        $listener = new SendPhoneNumberVerificationNotification;
 
         $listener->handle(new Registered($user));
     }
@@ -33,7 +33,7 @@ class SendPhoneNumberVerificationNotificationTest extends TestCase
         $user = m::mock(NotImplementedMustVerifyPhoneNumberModel::class);
         $user->shouldNotReceive('generatePhoneNumberVerificationToken');
 
-        $listener = new SendPhoneNumberVerificationNotification();
+        $listener = new SendPhoneNumberVerificationNotification;
 
         $listener->handle(new Registered($user));
     }
@@ -47,7 +47,7 @@ class SendPhoneNumberVerificationNotificationTest extends TestCase
         $user->method('hasVerifiedPhoneNumber')->willReturn(true);
         $user->expects($this->never())->method('generatePhoneNumberVerificationToken');
 
-        $listener = new SendPhoneNumberVerificationNotification();
+        $listener = new SendPhoneNumberVerificationNotification;
 
         $listener->handle(new Registered($user));
     }
