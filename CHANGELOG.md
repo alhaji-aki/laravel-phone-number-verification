@@ -2,6 +2,20 @@
 
 All notable changes to `laravel-phone-number-verification` will be documented in this file.
 
+## 1.3.0 - 2026-04-13
+
+### What's Changed
+
+* Bump dependabot/fetch-metadata from 2.3.0 to 2.4.0 by @dependabot[bot] in https://github.com/alhaji-aki/laravel-phone-number-verification/pull/12
+* Bump dependabot/fetch-metadata from 2.4.0 to 2.5.0 by @dependabot[bot] in https://github.com/alhaji-aki/laravel-phone-number-verification/pull/17
+* Bump dependabot/fetch-metadata from 2.5.0 to 3.0.0 by @dependabot[bot] in https://github.com/alhaji-aki/laravel-phone-number-verification/pull/19
+* Bump stefanzweifel/git-auto-commit-action from 5 to 7 by @dependabot[bot] in https://github.com/alhaji-aki/laravel-phone-number-verification/pull/15
+* Bump ramsey/composer-install from 3 to 4 by @dependabot[bot] in https://github.com/alhaji-aki/laravel-phone-number-verification/pull/18
+* Bump actions/checkout from 4 to 6 by @dependabot[bot] in https://github.com/alhaji-aki/laravel-phone-number-verification/pull/16
+* Added PHP8.5 and Laravel 13 Support by @alhaji-aki in https://github.com/alhaji-aki/laravel-phone-number-verification/pull/20
+
+**Full Changelog**: https://github.com/alhaji-aki/laravel-phone-number-verification/compare/1.2.0...1.3.0
+
 ## 1.2.0 - 2025-04-21
 
 ### What's Changed
