@@ -8,7 +8,7 @@ use Orchestra\Testbench\TestCase as Orchestra;
 
 abstract class TestCase extends Orchestra
 {
-    /** @var \AlhajiAki\PhoneNumberVerification\Tests\TestModel */
+    /** @var TestModel */
     protected $testModel;
 
     protected function setUp(): void
