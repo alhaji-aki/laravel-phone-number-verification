@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
+use AlhajiAki\OtpToken\Contracts\OtpTokenBroker;
 use AlhajiAki\OtpToken\OtpToken;
+use AlhajiAki\PhoneNumberVerification\Contracts\MustVerifyMobile;
 use App\Http\Controllers\Controller;
 use Illuminate\Auth\Events\Verified;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Validation\ValidationException;
@@ -25,7 +29,7 @@ class PhoneNumberVerificationController extends Controller
     /**
      * Verify the user's phone number.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function verify(Request $request)
     {
@@ -66,7 +70,7 @@ class PhoneNumberVerificationController extends Controller
     /**
      * Resend the phone number verification notification.
      *
-     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse
+     * @return JsonResponse|RedirectResponse
      */
     public function resend(Request $request)
     {
@@ -82,7 +86,7 @@ class PhoneNumberVerificationController extends Controller
     /**
      * Mark user's mobile as verified.
      *
-     * @param  \AlhajiAki\PhoneNumberVerification\Contracts\MustVerifyMobile  $user
+     * @param  MustVerifyMobile  $user
      * @return void
      */
     protected function markAsVerified($user)
@@ -98,7 +102,7 @@ class PhoneNumberVerificationController extends Controller
     /**
      * Get the broker to be used during verification.
      *
-     * @return \AlhajiAki\OtpToken\Contracts\OtpTokenBroker
+     * @return OtpTokenBroker
      */
     public function broker()
     {
